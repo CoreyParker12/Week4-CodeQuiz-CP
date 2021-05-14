@@ -50,8 +50,10 @@ h1 {
     padding: 10px 10px 10px 10px;
     margin: 15px 0 15px 0;
     font-size: 20px;
-    display: block;
+    display: none;
 }
+
+
 
 #timer-styling {
     display: flex;
