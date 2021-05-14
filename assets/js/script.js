@@ -8,11 +8,13 @@ const answerCOutput = document.getElementById("answerCOutput");
 const answerDOutput = document.getElementById("answerDOutput");
 const correctIncorrect = document.getElementById('correctIncorrect');
 const scoreScreen = document.getElementById('scoreScreen').style.display = 'none';
+const currentScore = document.getElementById('currentScore');
 
 startButton.addEventListener('click', game);
 startButton.addEventListener('click', timer);
 
-questionIndex = 0;
+let questionIndex = 0;
+let score = 0;
     
 // Questions
 
@@ -42,6 +44,11 @@ let quizQuestions = [
        answers: ["1","2","3", "4"],
        rightAnswer: "1"    
    },
+   {
+    question: "Question 6",
+    answers: ["1","2","3", "4"],
+    rightAnswer: "1"    
+    },
 ]
 
 
@@ -51,13 +58,24 @@ let quizQuestions = [
     let chosenAnswer = val.textContent;
     if (quizQuestions[questionIndex].rightAnswer === chosenAnswer) {
             correctIncorrect.innerHTML = 'Correct!'
+            score = score + 100;
+            currentScore.innerHTML = score;
             questionIndex++
+            if (quizQuestions.length - 1 < questionIndex) {
+                finalScreen();
+            } else {
             game();
+            }
+
         } else { 
-            console.log('Incorrect')
             correctIncorrect.innerHTML = 'Incorrect!'
             questionIndex++
-            game();
+            if (quizQuestions.length - 1 < questionIndex) {
+                finalScreen();
+            } else {
+                game();
+            }
+            
         }
  }
 
@@ -67,6 +85,13 @@ function game() {
 
  // Had to call on the array position, then the object inside
 
+    if (quizQuestions.length - 1 < questionIndex) {
+        finalScreen();
+    }
+    console.log(quizQuestions.length - 1)
+    console.log(questionIndex)
+
+    currentScore.innerHTML = score;
     questionOutput.innerHTML = quizQuestions[questionIndex].question;
     answerAOutput.innerHTML = quizQuestions[questionIndex].answers[0];
     answerBOutput.innerHTML = quizQuestions[questionIndex].answers[1];
@@ -79,10 +104,7 @@ function game() {
     document.getElementById("answerCOutput").style.display = 'block';
     document.getElementById("answerDOutput").style.display = 'block';
 
-    if (quizQuestions.length - 1 === questionIndex) {
 
-        finalScreen();
-    }
 }
 
 function finalScreen () {
