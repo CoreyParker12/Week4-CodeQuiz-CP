@@ -50,11 +50,12 @@ let quizQuestions = [
  function chosenAnswer(val) {
     let chosenAnswer = val.textContent;
     if (quizQuestions[questionIndex].rightAnswer === chosenAnswer) {
-            console.log('Correct');
+            correctIncorrect.innerHTML = 'Correct!'
             questionIndex++
             game();
         } else { 
             console.log('Incorrect')
+            correctIncorrect.innerHTML = 'Incorrect!'
             questionIndex++
             game();
         }
@@ -79,17 +80,19 @@ function game() {
     document.getElementById("answerDOutput").style.display = 'block';
 
     if (quizQuestions.length - 1 === questionIndex) {
-        document.getElementById("questionOutput").style.display = 'none';
-        document.getElementById("answerAOutput").style.display = 'none';
-        document.getElementById("answerBOutput").style.display = 'none';
-        document.getElementById("answerCOutput").style.display = 'none';
-        document.getElementById("answerDOutput").style.display = 'none';
+
         finalScreen();
     }
 }
 
 function finalScreen () {
-    console.log('You win');
+    document.getElementById("questionOutput").style.display = 'none';
+    document.getElementById("answerAOutput").style.display = 'none';
+    document.getElementById("answerBOutput").style.display = 'none';
+    document.getElementById("answerCOutput").style.display = 'none';
+    document.getElementById("answerDOutput").style.display = 'none';
+    document.getElementById("correctIncorrect").style.display = 'none';
+    document.getElementById('scoreScreen').style.display = 'block';
 }
 
 //Timer
@@ -106,7 +109,7 @@ function timer() {
         if (secondsRemaining < 0) {
             secondsRemaining = 0;
         }
-    }
+    } 
 
 }
 
