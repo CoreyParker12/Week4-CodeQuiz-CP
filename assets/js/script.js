@@ -1,5 +1,5 @@
 
-const startButton = document.querySelector('button');
+const startButton = document.getElementById('button');
 const countdownOutput = document.getElementById('countdownOutput');
 const questionOutput = document.getElementById('questionOutput');
 const answerAOutput = document.getElementById('answerAOutput');
@@ -7,16 +7,19 @@ const answerBOutput = document.getElementById('answerBOutput');
 const answerCOutput = document.getElementById('answerCOutput');
 const answerDOutput = document.getElementById('answerDOutput');
 const correctIncorrect = document.getElementById('correctIncorrect');
-const scoreScreen = document.getElementById('scoreScreen').style.display = 'none';
+const scoreScreen = document.getElementById('scoreScreen');
 const currentScore = document.getElementById('currentScore');
 const submitButton = document.getElementById('submitButton');
 const getInitials = document.getElementById('enterInitials');
 const outputHere = document.getElementById('outputHere');
 const restartButton = document.getElementById('restartButton');
+
+// For CSS needed to be unhidden later
+
 const scoreBox = document.getElementById('score-box');
 const answersContainer = document.getElementById('answers-container');
 
-// Starts the quiz and timer on Start Quiz Click
+// Starts the quiz and timer on Start Quiz click
 
 startButton.addEventListener('click', game);
 startButton.addEventListener('click', timer);
@@ -29,7 +32,7 @@ restartButton.addEventListener('click', restart);
 
 let questionIndex = 0;
 let score = 0;
-let secondsRemaining = 30;
+let secondsRemaining = 60;
     
 // Questions
 
@@ -104,10 +107,10 @@ let quizQuestions = [
                 document.getElementById('correctIncorrect').innerHTML = '';
             }, 1000);
 
-        // Updates score, deducts 5 seconds
+        // Updates score, deducts 10 seconds
 
         questionIndex++
-        secondsRemaining = secondsRemaining - 5;
+        secondsRemaining = secondsRemaining - 10;
 
             // Takes you to final page if time runs out
 
@@ -174,7 +177,7 @@ function finalScreen () {
     document.getElementById('answerCOutput').style.display = 'none';
     document.getElementById('answerDOutput').style.display = 'none';
 
-    //Displays the Submit ans Restart buttons
+    //Displays the Submit and Restart buttons
 
     document.getElementById('submitButton').style.display = 'block';
     document.getElementById('restartButton').style.display = 'block';
@@ -187,7 +190,7 @@ function finalScreen () {
     document.getElementById('score-box').style.display = 'block';
     document.getElementById('answers-container').style.display = 'none';
     currentScore.innerHTML = 'Final Score: ' + score;
-    document.getElementById('scoreScreen').style.display = 'block';
+    document.getElementById('scoreScreen').style.display = 'flex';
 
 }
 
@@ -217,7 +220,7 @@ function getScoreboard() {
     // Prints scoreboard to UI
 
     for (let i = 0; i < storedScoreboard.length; i++) {
-        output = [i + 1] + '.    ' + "Score: " + storedScoreboard[i].score + " | " + "Initals: " + storedScoreboard[i].initials;
+        output = "Score: " + storedScoreboard[i].score + " | " + "Initals: " + storedScoreboard[i].initials;
         let ul = document.createElement('ul');
         ul.textContent = output;
         console.log(output)
@@ -263,11 +266,3 @@ submitButton.addEventListener('click', function(event) {
     function restart() {
     document.location.href = '';
  }
-
-
-
-
- 
-
-
-
