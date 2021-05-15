@@ -9,48 +9,62 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 </head>
+
 <body>
-    <h1>Do you want to play a game?</h1>
+
+    <h1>Code Quiz</h1>
+    
     <div id="start-button">
-        <button type="button" id="button">Start Game!</button>
+        <button type="button" id="button">Start Quiz!</button>
     </div>
-
-
-
 
     <div id="question-box">
 
         <div id="box-size">
+
             <div id="timer-styling">
                 <p>
-                    Time Remaining
+                    Time Remaining:
                 </p>
                 <p id="countdownOutput"> </p>
             </div>
+
             <p id="questionOutput"></p>
+
             <ul id="answers-container">
                 <button onclick="chosenAnswer(answerAOutput)" class="answers-styling" id="answerAOutput"></button> 
                 <button onclick="chosenAnswer(answerBOutput)" class="answers-styling" id="answerBOutput"></button>
                 <button onclick="chosenAnswer(answerCOutput)" class="answers-styling" id="answerCOutput"></button>
                 <button onclick="chosenAnswer(answerDOutput)" class="answers-styling" id="answerDOutput"></button>
             </ul>
-            <p id="currentScore"></p>
-            <p id="correctIncorrect"></p>
+
             <div id="scoreScreen">
-                You Win!
+                Good job!
             </div>
+
+            <p id="currentScore"></p>
+
+            <p id="correctIncorrect"></p>
+
+            <input id="enterInitials" placeholder="Enter Initials"></input>
+            
+            <div id="submit-restart">
+                <button id="submitButton">Submit</button>
+
+                <button id="restartButton">Restart</button>
+            </div>
+
+
+            <div id="score-box">
+                Scoreboard:
+                <div id="score-styling">
+                    <p id="outputHere"></p>
+                </div>
+            </div>
+        
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
+    
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

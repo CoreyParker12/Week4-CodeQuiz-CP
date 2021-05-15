@@ -1,7 +1,11 @@
+/* Sets background color and font family */
+
 body {
     font-family: "Open Sans";
-    background-color: #cacaca;
+    background-color: #2a58bb;
 }
+
+/* Sets Code Quiz Styling */
 
 h1 {
     display: flex;
@@ -11,19 +15,25 @@ h1 {
     
 }
 
+/* Places Start Button */
+
 #start-button {
     display: flex;
     justify-content: center;
 }
 
+/* Start Button styling */
+
 #button {
-    background-color: rgb(24, 73, 206);
-    padding: 30px 80px 30px 80px;
+    background-color: rgb(27, 27, 27);
+    padding: 15px 40px 15px 40px;
     border-radius: 10px;
     color: white;
     font-size: 25px;
     margin-bottom: 25px;
 }
+
+/* Places question box */
 
 #question-box {
     
@@ -31,18 +41,51 @@ h1 {
     justify-content: center;
 }
 
+/* Styles question box */
+
 #box-size {
     background-color: white;
-    height: 300px;
-    width: 20%;
-    padding: 20px 20px 20px 20px;
+    width: 50%;
+    padding: 20px 20px 0 20px;
+    border-radius: 10px;
 }
+
+/* Styling for timer */
+
+#timer-styling {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Places questions */
 
 #questionOutput {
     display: flex;
     justify-content: center;
     font-size: 20px;
 }
+
+/* Styles Good Job! text */
+
+#scoreScreen {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Styles score */
+
+#currentScore {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Places answers and container styling */
 
 #answers-container {
     display: flex;
@@ -51,6 +94,20 @@ h1 {
     padding: 20px 25px 25px 20px;
 }
 
+/* Styles answer buttons */
+
+.answers-styling {
+    padding: 20px 20px 20px 20px;
+    margin: 15px 20px 15px 20px;
+    font-size: 16px;
+    display: none;
+    background-color: rgb(27, 27, 27);
+    color: white;
+    border-radius: 10px;
+}
+
+/*  Styles Correct/Incorrect */
+
 #correctIncorrect {
     display: flex;
     justify-content: center;
@@ -58,26 +115,53 @@ h1 {
     margin: 20px 0 20px 0;
 }
 
-#scoreScreen {
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-    color: red;
-}
+/* Hides submit button until needed on final page */
 
-.answers-styling {
-    padding: 10px 10px 10px 10px;
-    margin: 15px 20px 15px 20px;
-    font-size: 20px;
+#submit-form {
     display: none;
 }
 
+/* Hides enter initials input box until nedeed on final page */
 
+#enterInitials {
+    display: none;
+}
 
-#timer-styling {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0 20px 0;
-    font-size: 20px;
+/* Submit button styling */
+
+#submitButton {
+    display: none;
+    background-color: rgb(27, 27, 27);
+    padding: 5px 5px 5px 5px;
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    margin: 10px 0 10px 0;
+}
+
+/* Restart button styling */
+
+#restartButton {
+    display: none;
+    background-color: rgb(27, 27, 27);
+    padding: 5px 5px 5px 5px;
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    margin: 10px 0 10px 0;
+}
+
+/* Hides score box until needed on final page */
+
+#score-box {
+    display: none;
+    justify-content: center;
+}
+
+/* Styles scoreboard */
+
+#score-styling {
+    padding: 0 20px 20px 20px;
+    margin: 20px 0 0 0 ;
 }
 
